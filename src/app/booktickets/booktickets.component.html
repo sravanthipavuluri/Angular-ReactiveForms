@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 bgcls">
+      <h2>Ticket Booking Details</h2>
+      <form [formGroup]="bookTcktForm" novalidate>
+        <div class="form-group">
+          <label class="center-block">Name:
+            <input class="form-control" formControlName="name">
+          </label>
+        </div>    
+            
+        <div formGroupName="address" class="well well-lg">
+          <h4>Address Info</h4>
+               
+                <div class="form-group">
+                  <label class="center-block">Street:
+                    <input class="form-control" formControlName="street">
+                  </label>
+                </div>
+               
+
+                <div class="form-group">
+                  <label class="center-block">City:
+                    <input class="form-control" formControlName="city">
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="center-block">Location:
+                    <select class="form-control" formControlName="location">
+                        <option *ngFor="let location of locations" [value]="locations">{{location}}</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="center-block">Zip Code:
+                    <input class="form-control" formControlName="zip">
+                  </label>
+                </div>
+
+
+                <!-- <div class="form-group radio">
+                  <h4>Show Times:</h4>
+                  <label class="center-block"><input type="radio" formControlName="showtime" value="Morning">Morning</label>
+                  <label class="center-block"><input type="radio" formControlName="showtime" value="First">First</label>
+                  <label class="center-block"><input type="radio" formControlName="showtime" value="Second">Second</label>
+                </div>
+                <div class="checkbox">
+                  <label class="center-block">
+                    <input type="checkbox" formControlName="threeD">Need 3D View.
+                  </label>
+                </div> -->
+
+          </div>
+      </form>
+      <p>Form value: {{ bookTcktForm.value | json }}</p>
+      <p>Form status: {{ bookTcktForm.status | json }}</p>
+      <!-- <p>Name value: {{ bookTcktForm.get('name').value }}</p>
+      <p>Street value: {{ bookTcktForm.get('street').value}}</p> -->
+    </div>
+  </div>
+</div>
+
+
+
+
